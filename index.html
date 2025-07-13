@@ -1,1 +1,315 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaan Güler - Computer Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2dd4bf;
+      --primary-dark: #14b8a6;
+      --secondary: #0f172a;
+      --text: #e2e8f0;
+      --text-dark: #94a3b8;
+      --bg: #0f172a;
+      --bg-dark: #020617;
+      --bg-light: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+      line-height: 1.3;
+    }
+
+    header {
+      background: var(--bg-dark);
+      padding: 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem;
+      background: linear-gradient(to bottom, var(--bg-dark), var(--bg));
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--primary), #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      max-width: 800px;
+      margin: 1rem auto;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 2rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-category {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-category h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .skill-category ul {
+      list-style: none;
+      margin-left: 1rem;
+    }
+
+    .skill-category li {
+      margin: 0.5rem 0;
+      position: relative;
+    }
+
+    .skill-category li::before {
+      content: '▹';
+      position: absolute;
+      left: -1rem;
+      color: var(--primary);
+    }
+
+    .social-links {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .social-links a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      background: var(--bg-light);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .cv-download {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: var(--bg-dark);
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cv-download:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      section {
+        padding: 1rem;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Kaan Güler</h1>
+    <p>Computer Engineer</p>
+    <a href="CV_KaanGüler.pdf" class="cv-download" download>Download CV</a>
+  </div>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I graduated with high honors from the Computer Engineering program at TED University, where I completed my education entirely in English. I have experience in backend development, artificial intelligence, and computer vision. I gained hands-on experience through internships at organizations such as HAVELSAN, Ziraat Technology, and Usta Bilgi Sistemleri.</p>
+    <p>In addition, I am working on the computer vision module of an autonomous vehicle project funded by TED University. I also contributed to a senior project involving satellite imagery, gaining experience in the field of remote sensing. I am a team-oriented, solution-focused engineer who is eager to learn and apply innovative technologies.</p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <div class="skill-category">
+        <h3>🤖 AI & Computer Vision</h3>
+        <ul>
+          <li>Deep Learning</li>
+          <li>Computer Vision</li>
+          <li>Machine Learning</li>
+          <li>CNN</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3>💻 Programming</h3>
+        <ul>
+          <li>Python</li>
+          <li>C++</li>
+          <li>Java</li>
+          <li>C#</li>
+          <li>C</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3>🌐 Web Development</h3>
+        <ul>
+          <li>ASP.NET Core/MVC</li>
+          <li>Node.js/Express</li>
+          <li>React.js</li>
+          <li>Vue.js</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>🔧 Tools & Technologies</h3>
+        <ul>
+          <li>Git</li>
+          <li>Unity</li>
+          <li>Godot</li>
+          <li>SQL (MySQL, MS SQL)</li>
+          <li>Parallel Programming (OpenMP, CUDA)</li>
+          <li>PyTorch</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="skill-category" style="max-width: 600px;">
+      <h3>🎓 TED University</h3>
+      <p style="margin: 0.5rem 0; color: var(--primary);">Computer Engineering</p>
+      <p style="margin: 0.5rem 0;">GPA: 3.60/4.00</p>
+      <p style="color: var(--text-dark);">2020 – 2025</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Get in Touch</h2>
+    <div class="social-links">
+      <a href="https://github.com/kaanguler14" target="_blank">GitHub</a>
+      <a href="http://www.linkedin.com/in/kaan-güler-234098243" target="_blank">LinkedIn</a>
+      <a href="mailto:kaangulergs@gmail.com">Email</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Ankara, Türkiye | Phone: (+90) 05388379595</p>
+  </footer>
+</body>
+</html>

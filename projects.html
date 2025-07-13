@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaan Güler - Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2dd4bf;
+      --primary-dark: #14b8a6;
+      --secondary: #0f172a;
+      --text: #e2e8f0;
+      --text-dark: #94a3b8;
+      --bg: #0f172a;
+      --bg-dark: #020617;
+      --bg-light: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+      line-height: 1.3;
+    }
+
+    header {
+      background: var(--bg-dark);
+      padding: 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(to bottom, var(--bg-dark), var(--bg));
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background: var(--bg-light);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .project h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .tech-stack {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .tech-stack strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: var(--bg-dark);
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1>Projects</h1>
+  </div>
+
+  <section>
+    <div class="project">
+      <h2>🗺️ Ecomap - Senior Project</h2>
+      <p>A web-based mapping application that combines OSM data and AI-powered satellite imagery analysis to provide optimal and fuel-efficient route planning.</p>
+      <div class="tech-stack">
+        <strong>Technologies:</strong>
+        Python, Flask, PyTorch, UNet, OpenStreetMap, React, Java Spring Boot
+      </div>
+      <p><strong>Key Features:</strong></p>
+      <ul style="list-style: none; margin: 0.5rem 0;">
+        <li>• Dual route optimization (OSM & AI-based)</li>
+        <li>• Satellite imagery analysis with UNet</li>
+        <li>• Fuel-efficient path planning</li>
+      </ul>
+      <div style="display: flex; gap: 0.5rem; justify-content: flex-start;">
+        <a href="https://github.com/rabiayazici/ecomap-ui.git" class="btn" target="_blank">Frontend Repo</a>
+        <a href="https://github.com/rabiayazici/ecomap.git" class="btn" target="_blank">Backend Repo</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>🚗 Autonomous RC Car LAD Project</h2>
+      <p>This autonomous vehicle project is funded by the school and my job is to be responsible for the vision part of the vehicle. For this purpose, I research efficient computer vision models and algorithms and use them for the vehicle.</p>
+      <div class="tech-stack">
+        <strong>Technologies:</strong>
+        Computer Vision, Deep Learning, Python, Pytorch , ROS
+      </div>
+      <p><strong>Status:</strong> Current</p>
+      <a href="autonomous-car-devlog.html" class="btn">View Development Log</a>
+    </div>
+
+    <div class="project">
+      <h2>🔬 Investigation of Energy Efficient CNNs</h2>
+      <p>Research paper written as part of the CMPE 490 Introduction to Research course. Its main purpose is to provide research on energy efficient CNNs for use in autonomous vehicles and robotics.</p>
+      <div class="tech-stack">
+        <strong>Technologies:</strong>
+        Python, Pytorch
+      </div>
+      <a href="efficient-cnns-research.html" class="btn">View Paper</a>
+    </div>
+
+
+
+    <div class="project">
+      <h2>🎮 Olympic Games Information App</h2>
+      <p>An application that allows users to view team squads and match calendars for Olympic games. Built using JavaFX and MySQL.</p>
+      <div class="tech-stack">
+        <strong>Technologies:</strong>
+        Java, JavaFX, MySQL
+      </div>
+      <a href="https://drive.google.com/drive/folders/1SHqgKkIIizETbL_HKLd2GoJ0CvJ5lfxV?usp=sharing" class="btn" target="_blank">View Project</a>
+    </div>
+
+    <div class="project">
+      <h2>🏦 Banking App</h2>
+      <p>A banking application developed using ASP.NET Core MVC and Microsoft SQL Server.</p>
+      <div class="tech-stack">
+        <strong>Technologies:</strong>
+        ASP.NET Core MVC, Microsoft SQL Server
+      </div>
+      <a href="https://github.com/kaanguler14/Zte_MVC" class="btn" target="_blank">View on GitHub</a>
+    </div>
+
+
+    <div class="project">
+      <h2>📝 TO-DO APP</h2>
+      <p>A task management application built with Django REST API. Users can add, edit, mark as completed, and delete tasks. Features include task descriptions, search functionality, and task status tracking.</p>
+      <div class="tech-stack">
+        <strong>Technologies:</strong>
+        Python, Django, REST API
+      </div>
+      <a href="https://github.com/kaanguler14/TO-DO-APP.git" class="btn" target="_blank">View on GitHub</a>
+    </div>
+
+    
+    <div class="project">
+      <h2>🎮 Zombie Defense</h2>
+      <p>A Unity game project where the aim is to survive at home as long as possible. Players can craft items to protect themselves using resources collected from the environment.</p>
+      <div class="tech-stack">
+        <strong>Technologies:</strong>
+        Unity, C#
+      </div>
+      <a href="https://github.com/kaanguler14/Zombie-Defense.git" class="btn" target="_blank">View on GitHub</a>
+    </div>
+
+ 
+
+
+
+ 
+
+    <div class="project">
+      <h2>⚽ Football Card Game</h2>
+      <p>A card game implemented in Java.</p>
+      <div class="tech-stack">
+        <strong>Technologies:</strong>
+        Java
+      </div>
+      <a href="https://github.com/kaanguler14/Football-Card-Game.git" class="btn" target="_blank">View on GitHub</a>
+    </div>
+
+  
+
+   
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kaan Güler | Computer Engineer</p>
+  </footer>
+</body>
+</html> 

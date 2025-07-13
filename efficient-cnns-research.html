@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investigation of Energy Efficient CNNs - Research Paper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2dd4bf;
+      --background: #0f172a;
+      --text: #e2e8f0;
+      --surface: #1e293b;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--surface);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .page-title {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .page-title h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      flex: 1;
+    }
+
+    .pdf-container {
+      width: 100%;
+      height: calc(100vh - 200px);
+      min-height: 800px;
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .pdf-viewer {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: white;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: var(--background);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 1rem 0;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(45, 212, 191, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--surface);
+      margin-top: auto;
+      border-top: 1px solid rgba(45, 212, 191, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .page-title h1 {
+        font-size: 1.5rem;
+      }
+
+      .pdf-container {
+        height: calc(100vh - 300px);
+        min-height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-title">
+      <h1>Investigation of Energy Efficient CNNs</h1>
+      <p>Research paper on energy-efficient Convolutional Neural Networks for autonomous vehicles</p>
+      <a href="InvestigationOfEfficientCNNs.pdf" class="download-btn" download>Download PDF</a>
+    </div>
+
+    <div class="pdf-container">
+      <iframe src="InvestigationOfEfficientCNNs.pdf" class="pdf-viewer" title="Investigation of Energy Efficient CNNs PDF"></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Kaan Güler | Computer Engineer</p>
+  </footer>
+</body>
+</html> 
