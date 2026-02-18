@@ -1,164 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kaan Güler - Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Kaan Güler's projects — autonomous vehicles, AI-powered mapping, research papers, web apps, and game development.">
+  <title>Kaan Güler — Projects</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="stylesheet" href="style.css">
   <style>
-    :root {
-      --primary: #2dd4bf;
-      --primary-dark: #14b8a6;
-      --secondary: #0f172a;
-      --text: #e2e8f0;
-      --text-dark: #94a3b8;
-      --bg: #0f172a;
-      --bg-dark: #020617;
-      --bg-light: rgba(255, 255, 255, 0.05);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Orbitron', sans-serif;
-      color: var(--primary);
-      line-height: 1.3;
-    }
-
-    header {
-      background: var(--bg-dark);
-      padding: 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-      background: var(--bg-light);
-    }
-
     .page-header {
+      background: linear-gradient(160deg, var(--bg-dark) 0%, var(--bg) 70%);
+      padding: 3.5rem 2rem 2.5rem;
       text-align: center;
-      padding: 4rem 1rem;
-      background: linear-gradient(to bottom, var(--bg-dark), var(--bg));
+      border-bottom: 1px solid var(--border);
     }
 
     .page-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    section {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .project {
-      background: var(--bg-light);
-      border-radius: 1rem;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .project h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .tech-stack {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    .tech-stack strong {
-      color: var(--primary);
-      display: block;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
       margin-bottom: 0.5rem;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--primary);
+    .page-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-card.featured {
+      border-color: var(--border-accent);
+      background: linear-gradient(135deg, var(--surface), rgba(45, 212, 191, 0.04));
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .project-card h2 {
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .featured-badge {
+      flex-shrink: 0;
+      background: linear-gradient(90deg, var(--primary), #22d3ee);
       color: var(--bg-dark);
-      border-radius: 0.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
-    .btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      flex: 1;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: var(--bg-dark);
-      color: var(--text-dark);
-      margin-top: 4rem;
+    .project-highlights {
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    @media (max-width: 768px) {
-      section {
+    .project-highlights li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-highlights li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .projects-grid {
         grid-template-columns: 1fr;
-        padding: 1rem;
       }
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <nav>
       <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
+      <a href="projects.html" class="active">Projects</a>
       <a href="experience.html">Experience</a>
       <a href="blog.html">Blog</a>
     </nav>
@@ -166,116 +140,304 @@
 
   <div class="page-header">
     <h1>Projects</h1>
+    <p>A selection of academic, research, and personal projects</p>
   </div>
 
-  <section>
-    <div class="project">
-      <h2>🗺️ Ecomap - Senior Project</h2>
-      <p>A web-based mapping application that combines OSM data and AI-powered satellite imagery analysis to provide optimal and fuel-efficient route planning.</p>
-      <div class="tech-stack">
-        <strong>Technologies:</strong>
-        Python, Flask, PyTorch, UNet, OpenStreetMap, React, Java Spring Boot
+  <div class="page-wrapper">
+    <div class="projects-grid">
+
+      <!-- Ecomap — Featured -->
+      <div class="project-card featured">
+        <div class="project-top">
+          <h2>🗺️ Ecomap — Senior Capstone Project</h2>
+          <span class="featured-badge">⭐ Featured</span>
+        </div>
+        <p class="project-desc">
+          A web-based mapping application combining OpenStreetMap data with AI-powered satellite imagery analysis to
+          deliver optimal, fuel-efficient route planning. Developed as a multi-team senior project.
+        </p>
+        <ul class="project-highlights">
+          <li>Dual route optimization: OSM graph-based &amp; AI-based paths</li>
+          <li>Semantic segmentation of satellite imagery using UNet (PyTorch)</li>
+          <li>Microservice architecture: React frontend + Java Spring Boot backend + Python/Flask AI service</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">UNet</span>
+          <span class="tag">Flask</span>
+          <span class="tag">React</span>
+          <span class="tag">Java Spring Boot</span>
+          <span class="tag">OpenStreetMap</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/rabiayazici/ecomap-ui.git" class="btn btn-primary" target="_blank">Frontend
+            Repo</a>
+          <a href="https://github.com/rabiayazici/ecomap.git" class="btn btn-outline" target="_blank">Backend Repo</a>
+        </div>
       </div>
-      <p><strong>Key Features:</strong></p>
-      <ul style="list-style: none; margin: 0.5rem 0;">
-        <li>• Dual route optimization (OSM & AI-based)</li>
-        <li>• Satellite imagery analysis with UNet</li>
-        <li>• Fuel-efficient path planning</li>
-      </ul>
-      <div style="display: flex; gap: 0.5rem; justify-content: flex-start;">
-        <a href="https://github.com/rabiayazici/ecomap-ui.git" class="btn" target="_blank">Frontend Repo</a>
-        <a href="https://github.com/rabiayazici/ecomap.git" class="btn" target="_blank">Backend Repo</a>
+
+      <!-- Autonomous RC Car -->
+      <div class="project-card featured">
+        <div class="project-top">
+          <h2>🚗 Autonomous RC Car Development Log</h2>
+          <span class="featured-badge">🔬 Research</span>
+        </div>
+        <p class="project-desc">
+          Personal development log tracking my work on the vision system of a university-funded autonomous RC car.
+          Covers the full journey from initial research to real-time deployment.
+        </p>
+        <ul class="project-highlights">
+          <li>Researched and benchmarked efficient CV models for embedded systems</li>
+          <li>Implemented lane detection and object recognition pipelines</li>
+          <li>Integrated vision system with ROS for real-time vehicle control</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">ROS</span>
+          <span class="tag">Deep Learning</span>
+        </div>
+        <div class="project-links">
+          <a href="autonomous-car-devlog.html" class="btn btn-primary">View Dev Log</a>
+        </div>
       </div>
+
+      <!-- Autonomous Car Research Project -->
+      <div class="project-card featured">
+        <div class="project-top">
+          <h2>🚗 Autonomous Car Research Project</h2>
+          <span class="featured-badge">🔬 Research</span>
+        </div>
+        <p class="project-desc">
+          Led the computer vision sub-team of a university-funded autonomous vehicle research project, designing and
+          deploying end-to-end perception systems on embedded hardware.
+        </p>
+        <ul class="project-highlights">
+          <li>Led the CV sub-team, designing perception systems for autonomous navigation</li>
+          <li>Deployed low-latency object detection and semantic segmentation on NVIDIA Jetson Nano</li>
+          <li>Quantized and accelerated models with TensorRT for real-time closed-loop control</li>
+          <li>Built a modular ML training platform with MLflow (experiment tracking) and Optuna (hyperparameter tuning)
+          </li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">TensorRT</span>
+          <span class="tag">NVIDIA Jetson Nano</span>
+          <span class="tag">MLflow</span>
+          <span class="tag">Optuna</span>
+          <span class="tag">ROS</span>
+          <span class="tag">OpenCV</span>
+        </div>
+        <div class="project-links">
+          <a href="https://avesis.tedu.edu.tr/proje/c80f357d-ac67-444c-ac3a-1f268bd051ae/autonomous-rc-car"
+            class="btn btn-primary" target="_blank">View Research Page</a>
+          <a href="autonomous-car-devlog.html" class="btn btn-outline">Dev Log</a>
+        </div>
+      </div>
+
+      <!-- AI Basketball Analysis -->
+      <div class="project-card featured">
+        <div class="project-top">
+          <h2>🏀 AI Basketball Analysis</h2>
+          <span class="featured-badge">⭐ Featured</span>
+        </div>
+        <p class="project-desc">
+          A real-time computer vision system for analyzing outdoor basketball games. Combines object detection,
+          multi-object tracking, pose estimation, and court mapping for tactical analysis.
+        </p>
+        <ul class="project-highlights">
+          <li>Used Vision-Language Models (VLMs) to accelerate dataset labeling and improve annotation consistency</li>
+          <li>Implemented YOLOv8 + DeepSORT for simultaneous detection and tracking of players, ball, and hoop</li>
+          <li>Optimized inference with TensorRT for low-latency execution on NVIDIA GPUs</li>
+          <li>Applied pose estimation and homography-based court mapping for spatial and tactical analysis</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">YOLOv8</span>
+          <span class="tag">DeepSORT</span>
+          <span class="tag">TensorRT</span>
+          <span class="tag">VLMs</span>
+          <span class="tag">Pose Estimation</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">NVIDIA GPU</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kaanguler14/Basketball_App.git" class="btn btn-primary" target="_blank">View on
+            GitHub</a>
+        </div>
+      </div>
+
+      <!-- Multi-Channel RAG System -->
+      <div class="project-card featured">
+        <div class="project-top">
+          <h2>🤖 Multi-Channel AI Assistant (RAG System)</h2>
+          <span class="featured-badge">⭐ Featured</span>
+        </div>
+        <p class="project-desc">
+          A production-grade Retrieval-Augmented Generation (RAG) system for WhatsApp and Email channels. Runs fully
+          locally, turning a personal inbox into an AI-powered knowledge base.
+        </p>
+        <ul class="project-highlights">
+          <li>Fetches emails via IMAP (Gmail/Outlook), chunks with spaCy, and indexes using Qwen3 embeddings + Qdrant
+            vector store</li>
+          <li>Designed a local inference RAG pipeline with Llama 3.2 3B (GGUF) — semantic search, Q&amp;A, conversation
+            summaries, and tone-aware reply suggestions (formal/friendly/brief)</li>
+          <li>Built FastAPI endpoints for all AI features; dynamic context window management for optimal response
+            quality</li>
+          <li>Implemented dynamic Sent folder discovery across providers and [ME]/[THEM] role-tagging for accurate
+            conversation context</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">RAG</span>
+          <span class="tag">Llama 3.2</span>
+          <span class="tag">Qdrant</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">spaCy</span>
+          <span class="tag">Qwen3 Embeddings</span>
+          <span class="tag">IMAP</span>
+          <span class="tag">LLM</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kaanguler14/InsightMail.git" class="btn btn-primary" target="_blank">View on
+            GitHub</a>
+        </div>
+      </div>
+
+      <!-- CNN Research -->
+      <div class="project-card">
+        <h2>🔬 Investigation of Energy Efficient CNNs</h2>
+        <p class="project-desc">
+          Research paper written for CMPE 490 (Introduction to Research). Surveys and benchmarks energy-efficient CNN
+          architectures for use in autonomous vehicles and robotics.
+        </p>
+        <ul class="project-highlights">
+          <li>Comparative analysis of lightweight CNN architectures</li>
+          <li>Focus on inference speed vs. accuracy trade-offs</li>
+          <li>Practical recommendations for embedded deployment</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Research</span>
+        </div>
+        <div class="project-links">
+          <a href="efficient-cnns-research.html" class="btn btn-primary">View Paper</a>
+        </div>
+      </div>
+
+      <!-- Banking App -->
+      <div class="project-card">
+        <h2>🏦 Banking Web Application</h2>
+        <p class="project-desc">
+          A full-featured banking application built with ASP.NET Core MVC and Microsoft SQL Server, featuring user
+          authentication, account management, and transaction handling.
+        </p>
+        <ul class="project-highlights">
+          <li>MVC architecture with clean separation of concerns</li>
+          <li>Secure user authentication and session management</li>
+          <li>Relational database design with MS SQL Server</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">ASP.NET Core MVC</span>
+          <span class="tag">C#</span>
+          <span class="tag">MS SQL Server</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kaanguler14/Zte_MVC" class="btn btn-outline" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+
+      <!-- TO-DO App -->
+      <div class="project-card">
+        <h2>📝 Task Manager — REST API</h2>
+        <p class="project-desc">
+          A task management application with a Django REST API backend. Supports full CRUD operations, task
+          descriptions, search, and status tracking.
+        </p>
+        <ul class="project-highlights">
+          <li>RESTful API design with Django REST Framework</li>
+          <li>Task filtering, search, and status management</li>
+          <li>Clean API documentation and endpoint structure</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">REST API</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kaanguler14/TO-DO-APP.git" class="btn btn-outline" target="_blank">View on
+            GitHub</a>
+        </div>
+      </div>
+
+      <!-- Olympic Games App -->
+      <div class="project-card">
+        <h2>🎮 Olympic Games Information App</h2>
+        <p class="project-desc">
+          A desktop application for browsing team squads and match calendars for Olympic games, built with JavaFX and
+          MySQL.
+        </p>
+        <div class="tech-tags">
+          <span class="tag">Java</span>
+          <span class="tag">JavaFX</span>
+          <span class="tag">MySQL</span>
+        </div>
+        <div class="project-links">
+          <a href="https://drive.google.com/drive/folders/1SHqgKkIIizETbL_HKLd2GoJ0CvJ5lfxV?usp=sharing"
+            class="btn btn-outline" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Zombie Defense -->
+      <div class="project-card">
+        <h2>🧟 Zombie Defense — Unity Game</h2>
+        <p class="project-desc">
+          A survival game built in Unity where players craft items from collected resources to defend against waves of
+          zombies. Features crafting mechanics, AI enemy behavior, and resource management.
+        </p>
+        <div class="tech-tags">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">Game AI</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kaanguler14/Zombie-Defense.git" class="btn btn-outline" target="_blank">View on
+            GitHub</a>
+        </div>
+      </div>
+
+      <!-- Football Card Game -->
+      <div class="project-card">
+        <h2>⚽ Football Card Game</h2>
+        <p class="project-desc">
+          A card game implemented in Java with object-oriented design principles, player management, and game logic.
+        </p>
+        <div class="tech-tags">
+          <span class="tag">Java</span>
+          <span class="tag">OOP</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kaanguler14/Football-Card-Game.git" class="btn btn-outline" target="_blank">View
+            on GitHub</a>
+        </div>
+      </div>
+
     </div>
-
-    <div class="project">
-      <h2>🚗 Autonomous RC Car LAD Project</h2>
-      <p>This autonomous vehicle project is funded by the school and my job is to be responsible for the vision part of the vehicle. For this purpose, I research efficient computer vision models and algorithms and use them for the vehicle.</p>
-      <div class="tech-stack">
-        <strong>Technologies:</strong>
-        Computer Vision, Deep Learning, Python, Pytorch , ROS
-      </div>
-      <p><strong>Status:</strong> Current</p>
-      <a href="autonomous-car-devlog.html" class="btn">View Development Log</a>
-    </div>
-
-    <div class="project">
-      <h2>🔬 Investigation of Energy Efficient CNNs</h2>
-      <p>Research paper written as part of the CMPE 490 Introduction to Research course. Its main purpose is to provide research on energy efficient CNNs for use in autonomous vehicles and robotics.</p>
-      <div class="tech-stack">
-        <strong>Technologies:</strong>
-        Python, Pytorch
-      </div>
-      <a href="efficient-cnns-research.html" class="btn">View Paper</a>
-    </div>
-
-
-
-    <div class="project">
-      <h2>🎮 Olympic Games Information App</h2>
-      <p>An application that allows users to view team squads and match calendars for Olympic games. Built using JavaFX and MySQL.</p>
-      <div class="tech-stack">
-        <strong>Technologies:</strong>
-        Java, JavaFX, MySQL
-      </div>
-      <a href="https://drive.google.com/drive/folders/1SHqgKkIIizETbL_HKLd2GoJ0CvJ5lfxV?usp=sharing" class="btn" target="_blank">View Project</a>
-    </div>
-
-    <div class="project">
-      <h2>🏦 Banking App</h2>
-      <p>A banking application developed using ASP.NET Core MVC and Microsoft SQL Server.</p>
-      <div class="tech-stack">
-        <strong>Technologies:</strong>
-        ASP.NET Core MVC, Microsoft SQL Server
-      </div>
-      <a href="https://github.com/kaanguler14/Zte_MVC" class="btn" target="_blank">View on GitHub</a>
-    </div>
-
-
-    <div class="project">
-      <h2>📝 TO-DO APP</h2>
-      <p>A task management application built with Django REST API. Users can add, edit, mark as completed, and delete tasks. Features include task descriptions, search functionality, and task status tracking.</p>
-      <div class="tech-stack">
-        <strong>Technologies:</strong>
-        Python, Django, REST API
-      </div>
-      <a href="https://github.com/kaanguler14/TO-DO-APP.git" class="btn" target="_blank">View on GitHub</a>
-    </div>
-
-    
-    <div class="project">
-      <h2>🎮 Zombie Defense</h2>
-      <p>A Unity game project where the aim is to survive at home as long as possible. Players can craft items to protect themselves using resources collected from the environment.</p>
-      <div class="tech-stack">
-        <strong>Technologies:</strong>
-        Unity, C#
-      </div>
-      <a href="https://github.com/kaanguler14/Zombie-Defense.git" class="btn" target="_blank">View on GitHub</a>
-    </div>
-
- 
-
-
-
- 
-
-    <div class="project">
-      <h2>⚽ Football Card Game</h2>
-      <p>A card game implemented in Java.</p>
-      <div class="tech-stack">
-        <strong>Technologies:</strong>
-        Java
-      </div>
-      <a href="https://github.com/kaanguler14/Football-Card-Game.git" class="btn" target="_blank">View on GitHub</a>
-    </div>
-
-  
-
-   
-  </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Kaan Güler | Computer Engineer</p>
+    <p>© 2026 Kaan Güler &nbsp;·&nbsp;
+      <a href="https://github.com/kaanguler14" target="_blank">GitHub</a> &nbsp;·&nbsp;
+      <a href="http://www.linkedin.com/in/kaan-güler-234098243" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+      <a href="mailto:kaangulergs@gmail.com">kaangulergs@gmail.com</a>
+    </p>
   </footer>
+
+  <script src="chatbot.js"></script>
 </body>
-</html> 
+
+</html>
