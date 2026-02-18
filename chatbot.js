@@ -17,12 +17,15 @@
         gpa: '3.60 / 4.00',
         honors: 'High Honors',
         gradYear: '2020 – 2025',
-        languages: ['Python', 'C++', 'Java', 'C#', 'C', 'JavaScript'],
+        languages: ['C++', 'Python', 'Java', 'C#', 'SQL (PostgreSQL, Microsoft SQL Server)'],
         spokenLanguages: ['Turkish (Native)', 'English (Fluent)'],
         skills: {
-            ai: ['Deep Learning', 'Computer Vision', 'CNN / UNet', 'PyTorch', 'OpenCV', 'TensorRT', 'YOLOv8', 'RAG / LLMs', 'ROS', 'MLflow', 'Optuna', 'CUDA'],
-            web: ['ASP.NET Core', 'Node.js / Express', 'React.js', 'Vue.js', 'Django REST', 'Flask', 'FastAPI'],
-            tools: ['Git', 'Docker', 'MySQL', 'MS SQL', 'MongoDB', 'PostgreSQL', 'Qdrant', 'OpenMP']
+            computerVision: ['Object Detection', 'Semantic Segmentation', 'OpenCV', 'Multi Object Tracking', 'Pose Estimation', 'Signal Processing'],
+            machineLearning: ['PyTorch', 'CNNs', 'Transformers', 'Transfer Learning', 'Model Optimization', 'MLOps', 'NumPy', 'SciPy'],
+            generativeAI: ['Retrieval-Augmented Generation (RAG)', 'Prompt Engineering', 'Embeddings', 'Vector Search'],
+            backend: ['Spring Boot', 'FastAPI', '.NET / ASP.NET Core', 'RESTful APIs', 'MongoDB'],
+            languages: ['C++', 'Python', 'Java', 'C#', 'SQL (PostgreSQL, Microsoft SQL Server)'],
+            tools: ['Docker', 'Git', 'Bash', 'Jira', 'MLflow', 'Optuna']
         },
         internships: [
             {
@@ -61,9 +64,14 @@
                 tech: 'Python, RAG, Llama 3.2, Qdrant, FastAPI, spaCy, Qwen3'
             },
             {
-                name: 'Ecomap (Senior Capstone Project)',
+                name: 'Ecomap - Senior Project',
                 desc: 'Web-based mapping app combining OSM data with AI-powered satellite imagery analysis for fuel-efficient route planning. Microservice architecture with React + Spring Boot + Flask.',
                 tech: 'Python, PyTorch, UNet, Flask, React, Java Spring Boot'
+            },
+            {
+                name: 'Investigation of Energy Efficient CNNs',
+                desc: 'CMPE 490 research paper exploring energy-efficient CNN architectures for autonomous vehicles and robotics, focusing on inference speed versus accuracy trade-offs and practical deployment recommendations.',
+                tech: 'Python, PyTorch, CNNs, Research'
             },
             {
                 name: 'Banking Web Application',
@@ -90,7 +98,7 @@
     const intents = [
         {
             keys: ['merhaba', 'selam', 'hey', 'hello', 'hi', 'günaydın', 'iyi günler'],
-            answer: () => `Hello! 👋 I'm Kaan's portfolio assistant. You can ask me about his education, experience, skills, projects, or how to contact him. How can I help?`
+            answer: () => `Hello! I'm Kaan's portfolio assistant. You can ask me about his education, experience, skills, projects, or how to contact him. How can I help?`
         },
         {
             keys: ['who', 'kim', 'yourself', 'about', 'hakkında', 'tanıt', 'introduce', 'tell me about', 'kaan'],
@@ -98,7 +106,7 @@
         },
         {
             keys: ['education', 'eğitim', 'university', 'üniversite', 'degree', 'gpa', 'school', 'okul', 'mezun', 'graduate'],
-            answer: () => `🎓 ${KB.university}\n${KB.degree}\nGPA: ${KB.gpa} (${KB.honors})\nPeriod: ${KB.gradYear}`
+            answer: () => `${KB.university}\n${KB.degree}\nGPA: ${KB.gpa} (${KB.honors})\nPeriod: ${KB.gradYear}`
         },
         {
             keys: ['experience', 'internship', 'staj', 'deneyim', 'work', 'iş', 'çalış', 'havelsan', 'ziraat', 'usta'],
@@ -112,11 +120,11 @@
         },
         {
             keys: ['skill', 'yetenek', 'beceri', 'technology', 'teknoloji', 'what can', 'ne bilir', 'stack', 'tools'],
-            answer: () => `🤖 AI & CV: ${KB.skills.ai.join(', ')}\n\n🌐 Web & Backend: ${KB.skills.web.join(', ')}\n\n🔧 Tools & Infra: ${KB.skills.tools.join(', ')}`
+            answer: () => `Computer Vision: ${KB.skills.computerVision.join(', ')}\n\nMachine Learning: ${KB.skills.machineLearning.join(', ')}\n\nGenerative AI & LLMs: ${KB.skills.generativeAI.join(', ')}\n\nBackend: ${KB.skills.backend.join(', ')}\n\nLanguages & Databases: ${KB.skills.languages.join(', ')}\n\nDevelopment Tools: ${KB.skills.tools.join(', ')}`
         },
         {
             keys: ['programming', 'language', 'dil', 'python', 'java', 'c++'],
-            answer: () => `💻 Programming Languages: ${KB.languages.join(', ')}\n\n🗣 Spoken Languages: ${KB.spokenLanguages.join(', ')}`
+            answer: () => `Programming Languages: ${KB.languages.join(', ')}\n\nSpoken Languages: ${KB.spokenLanguages.join(', ')}`
         },
         {
             keys: ['project', 'proje', 'portfolio'],
@@ -139,21 +147,21 @@
             keys: ['basketball', 'basketbol', 'sport', 'yolo', 'deepsort', 'tracking'],
             answer: () => {
                 const p = KB.projects[1];
-                return `🏀 ${p.name}\n\n${p.desc}\n\nTechnologies: ${p.tech}`;
+                return `${p.name}\n\n${p.desc}\n\nTechnologies: ${p.tech}`;
             }
         },
         {
             keys: ['rag', 'llm', 'chatbot', 'whatsapp', 'email', 'insightmail', 'assistant', 'retrieval'],
             answer: () => {
                 const p = KB.projects[2];
-                return `🤖 ${p.name}\n\n${p.desc}\n\nTechnologies: ${p.tech}`;
+                return `${p.name}\n\n${p.desc}\n\nTechnologies: ${p.tech}`;
             }
         },
         {
             keys: ['ecomap', 'satellite', 'uydu', 'senior', 'capstone', 'bitirme'],
             answer: () => {
                 const p = KB.projects[3];
-                return `🗺️ ${p.name}\n\n${p.desc}\n\nTechnologies: ${p.tech}`;
+                return `${p.name}\n\n${p.desc}\n\nTechnologies: ${p.tech}`;
             }
         },
         {
@@ -162,7 +170,7 @@
         },
         {
             keys: ['contact', 'iletişim', 'email', 'mail', 'reach', 'ulaş', 'phone', 'telefon'],
-            answer: () => `📧 Email: ${KB.email}\n🐙 GitHub: ${KB.github}\n💼 LinkedIn: ${KB.linkedin}\n📍 Location: ${KB.location}`
+            answer: () => `Email: ${KB.email}\nGitHub: ${KB.github}\nLinkedIn: ${KB.linkedin}\nLocation: ${KB.location}`
         },
         {
             keys: ['cv', 'resume', 'özgeçmiş'],
@@ -170,15 +178,15 @@
         },
         {
             keys: ['certificate', 'sertifika', 'certification', 'coursera', 'patika'],
-            answer: () => `🏆 Certifications:\n${KB.certifications.map(c => '• ' + c).join('\n')}`
+            answer: () => `Certifications:\n${KB.certifications.map(c => '- ' + c).join('\n')}`
         },
         {
             keys: ['activity', 'aktivite', 'club', 'kulüp', 'community', 'topluluk', 'member', 'üye'],
-            answer: () => `🤝 Memberships & Activities:\n${KB.activities.map(a => '• ' + a).join('\n')}`
+            answer: () => `Memberships & Activities:\n${KB.activities.map(a => '- ' + a).join('\n')}`
         },
         {
             keys: ['strength', 'güçlü', 'strong', 'avantaj', 'advantage', 'why hire', 'neden', 'niye'],
-            answer: () => `💪 ${KB.strengths}`
+            answer: () => `${KB.strengths}`
         },
         {
             keys: ['deep learning', 'derin öğrenme', 'neural', 'model', 'machine learning'],
@@ -190,38 +198,38 @@
         },
         {
             keys: ['backend', 'web', 'fullstack', 'full-stack', 'api', 'frontend'],
-            answer: () => `🌐 Web & Backend Skills:\n\n• Backend: ASP.NET Core, Node.js/Express, Django REST, Flask, FastAPI\n• Frontend: React.js, Vue.js\n• Databases: MySQL, MS SQL, MongoDB, PostgreSQL, Qdrant\n• Containerization: Docker\n• Gained practical experience through internships at HAVELSAN, Ziraat Technology, and Usta Bilgi Sistemleri`
+            answer: () => `Web & Backend Skills:\n\n- Backend: ASP.NET Core, Node.js/Express, Django REST, Flask, FastAPI\n- Frontend: React.js, Vue.js\n- Databases: MySQL, MS SQL, MongoDB, PostgreSQL, Qdrant\n- Containerization: Docker\n- Gained practical experience through internships at HAVELSAN, Ziraat Technology, and Usta Bilgi Sistemleri`
         },
         {
             keys: ['game', 'oyun', 'unity', 'godot', 'zombie'],
-            answer: () => `🎮 Game Development:\n\n• Zombie Defense: A Unity survival game with crafting and AI enemies\n• Football Card Game: Card game in Java\n• Supervisory Board Member at Tedu Game Dev & Animation Society\n• Mentored students at Game Jam events (IEEE, Google DSC)`
+            answer: () => `Game Development:\n\n- Zombie Defense: A Unity survival game with crafting and AI enemies\n- Football Card Game: Card game in Java\n- Supervisory Board Member at Tedu Game Dev & Animation Society\n- Mentored students at Game Jam events (IEEE, Google DSC)`
         },
         {
             keys: ['available', 'müsait', 'open to', 'looking for', 'arıyor', 'position', 'full-time', 'role'],
-            answer: () => `Kaan is open to full-time roles, internships, and research collaborations in AI, Computer Vision, and Software Engineering.\n\n📧 You can reach him at: ${KB.email}\n💼 LinkedIn: ${KB.linkedin}`
+            answer: () => `Kaan is open to full-time roles, internships, and research collaborations in AI, Computer Vision, and Software Engineering.\n\nYou can reach him at: ${KB.email}\nLinkedIn: ${KB.linkedin}`
         },
         {
             keys: ['teşekkür', 'thanks', 'thank you', 'sağol'],
-            answer: () => `You're welcome! 😊 Feel free to ask anything else about Kaan, or reach out to him directly at ${KB.email}.`
+            answer: () => `You're welcome! Feel free to ask anything else about Kaan, or reach out to him directly at ${KB.email}.`
         }
     ];
 
-    const defaultAnswer = `I'm not sure about that, but I can help with questions about Kaan's:\n\n• 🎓 Education & GPA\n• 💼 Internship experience\n• 🤖 AI & CV skills\n• 🗂 Projects\n• 📧 Contact info\n• 🏆 Certifications\n• 💪 Strengths\n\nTry asking something like "What are his skills?" or "Tell me about his projects".`;
+    const defaultAnswer = `I'm not sure about that, but I can help with questions about Kaan's:\n\n- Education & GPA\n- Internship experience\n- AI & CV skills\n- Projects\n- Contact info\n- Certifications\n- Strengths\n\nTry asking something like "What are his skills?" or "Tell me about his projects".`;
 
     /* ── Topic-based project tags for filtering ─────────────── */
     const projectTags = {
-        'computer vision': [0, 1, 3],    // Autonomous Car, Basketball, Ecomap
-        'vision': [0, 1, 3],
-        'cv': [0, 1, 3],
-        'deep learning': [0, 1, 3],
-        'machine learning': [0, 1, 2, 3],
-        'ai': [0, 1, 2, 3],
-        'web': [3, 4, 5],
-        'backend': [2, 4, 5],
-        'fullstack': [3, 4, 5],
-        'full-stack': [3, 4, 5],
-        'game': [6],
-        'unity': [6],
+        'computer vision': [0, 1, 3, 4],    // Autonomous Car, Basketball, Ecomap, CNNs research
+        'vision': [0, 1, 3, 4],
+        'cv': [0, 1, 3, 4],
+        'deep learning': [0, 1, 3, 4],
+        'machine learning': [0, 1, 2, 3, 4],
+        'ai': [0, 1, 2, 3, 4],
+        'web': [3, 5, 6],
+        'backend': [2, 5, 6],
+        'fullstack': [3, 5, 6],
+        'full-stack': [3, 5, 6],
+        'game': [7],
+        'unity': [7],
         'rag': [2],
         'llm': [2],
         'nlp': [2],
@@ -231,8 +239,8 @@
         'ros': [0],
         'tracking': [1],
         'detection': [0, 1],
-        'segmentation': [0, 3],
-        'python': [0, 1, 2, 3, 5],
+        'segmentation': [0, 3, 4],
+        'python': [0, 1, 2, 3, 4, 6],
         'react': [3],
         'django': [5],
         'flask': [2, 3],
@@ -280,11 +288,11 @@
 
     /* ── Quick Questions ────────────────────────────────────── */
     const quickQuestions = [
-        { label: '👤 Who is Kaan?', q: 'Who is Kaan?' },
-        { label: '💼 Experience', q: 'Tell me about his experience' },
-        { label: '🤖 Skills', q: 'What are his skills?' },
-        { label: '🗂 Projects', q: 'What projects has he worked on?' },
-        { label: '📧 Contact', q: 'How can I contact him?' }
+        { label: 'Who is Kaan?', q: 'Who is Kaan?' },
+        { label: 'Experience', q: 'Tell me about his experience' },
+        { label: 'Skills', q: 'What are his skills?' },
+        { label: 'Projects', q: 'What projects has he worked on?' },
+        { label: 'Contact', q: 'How can I contact him?' }
     ];
 
     /* ── Render Widget ──────────────────────────────────────── */
