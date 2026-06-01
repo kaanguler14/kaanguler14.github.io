@@ -30,12 +30,14 @@ Output is written to `dist/`.
 
 ## Deploy (GitHub Pages)
 
-Deployment runs automatically on push to `main` via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+On every push to `main`, the workflow builds the app and publishes `dist/` to the **`gh-pages`** branch.
 
 **One-time setup in the GitHub repo:**
 
-1. **Settings → Pages → Build and deployment** → Source: **GitHub Actions**
-2. Push to `main`; the workflow builds and publishes `dist/`
+1. **Settings → Pages → Build and deployment**
+2. Source: **Deploy from a branch**
+3. Branch: **`gh-pages`** / folder **`/ (root)`**
+4. Save
 
 Live site: **https://kaanguler14.github.io**
 
