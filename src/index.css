@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: hsl(0 0% 4%);
+  --color-surface: hsl(0 0% 8%);
+  --color-text-primary: hsl(0 0% 96%);
+  --color-muted: hsl(0 0% 53%);
+  --color-stroke: hsl(0 0% 12%);
+  --color-accent: hsl(0 0% 96%);
+
+  --font-body: "Inter", sans-serif;
+  --font-display: "Instrument Serif", serif;
+
+  --animate-scroll-down: scroll-down 1.5s ease-in-out infinite;
+  --animate-role-fade-in: role-fade-in 0.4s ease-out forwards;
+  --animate-gradient-shift: gradient-shift 6s ease infinite;
+
+  @keyframes scroll-down {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+  }
+  @keyframes role-fade-in {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-body antialiased selection:bg-accent/30;
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+@utility accent-gradient {
+  background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  background-size: 200% 200%;
+}
+
+@utility accent-gradient-animate {
+  @apply accent-gradient animate-gradient-shift;
+}
+
+@utility glass {
+  @apply backdrop-blur-xl bg-surface/60 border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+}
+
+@utility noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: 0.05;
+  z-index: 9998;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3%3C/filter%3%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3%3C/svg%3e");
+}
+
+@utility blur-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+}
+
+@utility name-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+@utility tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-stroke rounded-full hover:bg-muted/50 transition-colors;
+}
+

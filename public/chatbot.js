@@ -7,91 +7,87 @@
     /* ── Knowledge Base ─────────────────────────────────────── */
     const KB = {
         name: 'Kaan Güler',
-        title: 'Computer Engineer',
-        email: 'kaangulergs@gmail.com',
+        title: 'AI / Deep Learning Engineer',
+        email: 'glerkaan@yahoo.com',
         location: 'Ankara, Türkiye',
         github: 'https://github.com/kaanguler14',
-        linkedin: 'http://www.linkedin.com/in/kaan-güler-234098243',
+        linkedin: 'https://linkedin.com/in/gulerkaan',
         university: 'TED University',
-        degree: 'B.Sc. Computer Engineering (English medium)',
+        degree: 'B.Sc. in Computer Engineering (High Honors)',
         gpa: '3.60 / 4.00',
         honors: 'High Honors',
         gradYear: '2020 – 2025',
-        languages: ['C++', 'Python', 'Java', 'C#', 'SQL (PostgreSQL, Microsoft SQL Server)'],
-        spokenLanguages: ['Turkish (Native)', 'English (Fluent)'],
+        languages: ['Python', 'C++', 'C#', 'SQL', 'JavaScript'],
+        spokenLanguages: ['Turkish (Native)', 'English (Fluent, IELTS 6.5)'],
         skills: {
-            computerVision: ['Object Detection', 'Semantic Segmentation', 'OpenCV', 'Multi Object Tracking', 'Pose Estimation', 'Signal Processing'],
-            machineLearning: ['PyTorch', 'CNNs', 'Transformers', 'Transfer Learning', 'Model Optimization', 'MLOps', 'NumPy', 'SciPy'],
-            generativeAI: ['Retrieval-Augmented Generation (RAG)', 'Prompt Engineering', 'Embeddings', 'Vector Search'],
-            backend: ['Spring Boot', 'FastAPI', '.NET / ASP.NET Core', 'RESTful APIs', 'MongoDB'],
-            languages: ['C++', 'Python', 'Java', 'C#', 'SQL (PostgreSQL, Microsoft SQL Server)'],
-            tools: ['Docker', 'Git', 'Bash', 'Jira', 'MLflow', 'Optuna']
+            computerVision: ['Object Detection', 'Semantic Segmentation', 'OpenCV', 'CUDA', 'Edge Inference'],
+            machineLearning: ['PyTorch', 'CNNs', 'Transformers', 'Model Quantization', 'MLflow', 'Optuna'],
+            generativeAI: ['Retrieval-Augmented Generation (RAG)', 'Prompt Engineering', 'LangGraph', 'LangChain', 'LlamaIndex', 'vLLM', 'Ollama'],
+            backend: ['FastAPI (async)', 'Node.js / Express.js', '.NET Core / ASP.NET Core', 'RESTful APIs', 'PostgreSQL', 'Qdrant', 'ChromaDB', 'Redis'],
+            tools: ['Docker', 'Git', 'GitHub Actions', 'Unix/Linux']
         },
-        internships: [
+        experience: [
             {
-                company: 'Usta Bilgi Sistemleri A.Ş.',
+                company: 'AI / Backend Engineer (Freelance)',
+                period: 'Jun 2025 – Present',
+                role: 'Remote / Bolu, Turkey',
+                work: 'Contributed backend and AI features to a production mobile application. Designed and integrated LLM-powered features (semantic search, conversational assistant, smart suggestions) via async FastAPI services.'
+            },
+            {
+                company: 'Computer Vision Sub-Team Lead | Autonomous Vehicle',
+                period: 'Sep 2024 – Jun 2025',
+                role: 'TEDU (Funded Research), Ankara, Turkey',
+                work: 'Led the computer vision team for perception systems of an autonomous scale vehicle. Developed PyTorch models optimized for low-latency edge inference via CUDA and model quantization.'
+            },
+            {
+                company: 'Usta Bilgi Sistemleri',
                 period: 'Aug – Sep 2024',
-                role: 'Software Development Intern',
-                work: 'Developed full-stack features using .NET backend and React frontend. Worked with MongoDB, PostgreSQL and Docker.'
+                role: 'Computer Engineer Intern',
+                work: 'Built backend components for a document-signing app using .NET, React, PostgreSQL, and Docker.'
             },
             {
                 company: 'HAVELSAN',
                 period: 'Jul – Aug 2024',
-                role: 'Software Development Intern',
-                work: 'Built backend services with Node.js/Express for defense-sector applications. Integrated native C libraries via Koffi FFI. Contributed to Vue.js frontend.'
+                role: 'Computer Engineer Intern',
+                work: 'Contributed to defense-industry backend systems in C++, integrating native C++ modules with Node.js via Koffi FFI.'
             },
             {
                 company: 'Ziraat Technology',
-                period: 'Aug – Sep 2023',
-                role: 'Software Development Intern',
-                work: 'Developed a web application using ASP.NET Core MVC and Microsoft SQL Server for internal banking operations.'
+                period: 'Jul – Sep 2023',
+                role: 'Computer Engineer Intern',
+                work: 'Developed RESTful APIs and MVC architectures for regulated financial applications using ASP.NET Core and SQL Server.'
             }
         ],
         projects: [
             {
-                name: 'Autonomous Car Research Project',
-                desc: 'Led the CV sub-team of a university-funded autonomous vehicle project. Deployed object detection and semantic segmentation on NVIDIA Jetson Nano. Used TensorRT for real-time inference, MLflow for experiment tracking, Optuna for hyperparameter tuning.',
-                tech: 'Python, PyTorch, TensorRT, Jetson Nano, ROS, MLflow, Optuna'
+                name: 'CurriculumForge | Autonomous Multi-Agent Reasoning System',
+                desc: 'Architected a 5-agent LangGraph reasoning pipeline producing grounded, schema-validated outputs from minimal input, applying multi-step reasoning orchestration to complex generation problems.',
+                tech: 'Python, LangGraph, ChromaDB, SQLite, Ollama / Gemini'
             },
             {
-                name: 'AI Basketball Analysis',
-                desc: 'Real-time CV system for basketball game analysis. YOLOv8 + DeepSORT for player/ball tracking. TensorRT optimization on NVIDIA GPUs. Pose estimation and homography-based court mapping.',
-                tech: 'Python, YOLOv8, DeepSORT, TensorRT, OpenCV, Pose Estimation'
+                name: 'TestForge | Multi-Agent AI Test Generation System',
+                desc: 'Built an agentic reasoning system (writer, runner, analyzer, suggester) that autonomously generates, executes, and analyzes software tests in Docker-sandboxed runtimes.',
+                tech: 'Python, LangGraph, OpenAI API, Docker, GitHub Actions'
             },
             {
-                name: 'Multi-Channel AI Assistant (RAG System)',
-                desc: 'Production-grade RAG system for WhatsApp and Email. Runs fully locally with Llama 3.2 3B. Fetches emails via IMAP, chunks with spaCy, indexes with Qwen3 embeddings + Qdrant. FastAPI endpoints for semantic search, Q&A, and tone-aware replies.',
-                tech: 'Python, RAG, Llama 3.2, Qdrant, FastAPI, spaCy, Qwen3'
+                name: 'Pressing Analyst Bot | Real-Time Streaming RAG Assistant',
+                desc: 'Engineered real-time, low-latency streaming completions for token-by-token UX over a grounded sports analytics dataset using OpenAI function calling and similarity retrieval.',
+                tech: 'Python, OpenAI API, Cosine-Similarity Embeddings, Streaming'
             },
             {
-                name: 'Ecomap - Senior Project',
-                desc: 'Web-based mapping app combining OSM data with AI-powered satellite imagery analysis for fuel-efficient route planning. Microservice architecture with React + Spring Boot + Flask.',
-                tech: 'Python, PyTorch, UNet, Flask, React, Java Spring Boot'
+                name: 'InsightMail | Local-First, On-Premise AI Assistant',
+                desc: 'Built a privacy-preserving, fully on-premise assistant running locally hosted LLM inference (Ollama LLaMA) with concurrent async FastAPI service, IMAP ingestion, and Qdrant vector indexing.',
+                tech: 'Python, FastAPI, LLaMA, Qdrant, Sentence Transformers'
             },
             {
-                name: 'Investigation of Energy Efficient CNNs',
-                desc: 'CMPE 490 research paper exploring energy-efficient CNN architectures for autonomous vehicles and robotics, focusing on inference speed versus accuracy trade-offs and practical deployment recommendations.',
-                tech: 'Python, PyTorch, CNNs, Research'
-            },
-            {
-                name: 'Banking Web Application',
-                desc: 'Full-featured banking app with ASP.NET Core MVC and MS SQL Server. User authentication, account management, and transaction handling.',
-                tech: 'ASP.NET Core MVC, C#, MS SQL Server'
-            },
-            {
-                name: 'Task Manager REST API',
-                desc: 'Task management app built with Django REST Framework. Full CRUD, search, filtering, and status tracking.',
-                tech: 'Python, Django, REST API'
-            },
-            {
-                name: 'Zombie Defense (Unity Game)',
-                desc: 'Survival game with crafting mechanics and AI enemy behavior. Built in Unity with C#.',
-                tech: 'Unity, C#'
+                name: 'Autonomous Scale Vehicle (TEDU Research)',
+                desc: 'Led the CV sub-team, delivering low-latency object detection and semantic segmentation models in PyTorch optimized for resource-constrained edge devices via GPU/CUDA-aware optimization and model quantization.',
+                tech: 'Python, PyTorch, OpenCV, CUDA, MLflow, Optuna'
             }
         ],
         certifications: ['Unity Learn Patikası (Patika.dev)', 'Python 101/201/301 (Turkcell)', 'Machine Learning Introduction (Coursera)'],
-        activities: ['Tedu Game Dev & Animation Society (Supervisory Board Member)', 'Tedu IEEE (Game Jam Mentor)', 'Tedu Google DSC (Game Jam Mentor)'],
-        strengths: 'Team-oriented, solution-focused, eager to learn innovative technologies. Strong background in AI/CV with real-world deployment experience (Jetson Nano, TensorRT). Research experience with published work on energy-efficient CNNs.'
+        activities: ['Tedu Game Dev & Animation Society (Supervisory Board Member)', 'Tedu IEEE (Game Jam Mentor)', 'AlecTed Team (Shell Eco-Marathon autonomous-vehicle software)'],
+        strengths: 'Team-oriented, solution-focused, eager to learn innovative technologies. Strong background in AI, computer vision, and backend development with production deployment experience (FastAPI, PyTorch, Docker, LangGraph).'
     };
 
     /* ── Intent Matching ────────────────────────────────────── */
@@ -111,8 +107,8 @@
         {
             keys: ['experience', 'internship', 'staj', 'deneyim', 'work', 'iş', 'çalış', 'havelsan', 'ziraat', 'usta'],
             answer: () => {
-                let txt = `Kaan has completed 3 internships:\n\n`;
-                KB.internships.forEach((i, idx) => {
+                let txt = `Kaan has experience across freelance, research, and internship roles:\n\n`;
+                KB.experience.forEach((i, idx) => {
                     txt += `${idx + 1}. ${i.company} (${i.period})\n   ${i.role}\n   ${i.work}\n\n`;
                 });
                 return txt;
