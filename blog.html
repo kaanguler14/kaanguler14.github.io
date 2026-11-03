@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Kaan Güler's technical blog — insights on Computer Vision, Deep Learning, autonomous vehicles, and software engineering.">
+  <title>Kaan Güler — Blog</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header {
+      background: linear-gradient(160deg, var(--bg-dark) 0%, var(--bg) 70%);
+      padding: 3.5rem 2rem 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .blog-post {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: var(--transition);
+    }
+
+    .blog-post:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .post-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-post h2 {
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .post-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .post-excerpt {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin: 0.75rem 0;
+    }
+
+    .post-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#work">Projects</a>
+      <a href="/#resume">Experience</a>
+      <a href="/blog.html" class="active">Blog</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1>Technical Blog</h1>
+    <p>Insights on Computer Vision, Deep Learning, and Software Engineering</p>
+  </div>
+
+  <div class="page-wrapper">
+
+    <div class="blog-post">
+      <div class="post-top">
+        <h2>Energy Efficient CNNs for Autonomous Vehicles</h2>
+        <span class="post-date">March 15, 2024</span>
+      </div>
+      <p class="post-excerpt">
+        Based on my CMPE 490 research paper, this article explores the challenges and solutions in implementing
+        energy-efficient Convolutional Neural Networks for autonomous vehicles — covering optimization techniques, model
+        compression, and real-world performance metrics.
+      </p>
+      <div class="post-footer">
+        <div class="tags">
+          <span class="tag">Deep Learning</span>
+          <span class="tag">CNN</span>
+          <span class="tag">Autonomous Vehicles</span>
+        </div>
+        <a href="efficient-cnns-research.html" class="btn btn-primary">Read Paper →</a>
+      </div>
+    </div>
+
+    <div class="blog-post">
+      <div class="post-top">
+        <h2>Computer Vision in Autonomous RC Cars</h2>
+        <span class="post-date">March 1, 2024</span>
+      </div>
+      <p class="post-excerpt">
+        A deep dive into the vision system of our university-funded autonomous RC car project. Learn about the
+        challenges we faced, the algorithms we implemented, and how we optimized performance for real-time processing on
+        embedded hardware.
+      </p>
+      <div class="post-footer">
+        <div class="tags">
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Autonomous Driving</span>
+          <span class="tag">Python</span>
+          <span class="tag">ROS</span>
+        </div>
+        <a href="autonomous-car-devlog.html" class="btn btn-primary">View Dev Log →</a>
+      </div>
+    </div>
+
+    <div class="blog-post">
+      <div class="post-top">
+        <h2>Game Development with Unity: Zombie Defense Case Study</h2>
+        <span class="post-date">February 15, 2024</span>
+      </div>
+      <p class="post-excerpt">
+        A technical breakdown of the Zombie Defense game project — exploring survival mechanics, resource management
+        systems, and AI behavior patterns for enemies in Unity.
+      </p>
+      <div class="post-footer">
+        <div class="tags">
+          <span class="tag">Unity</span>
+          <span class="tag">Game Dev</span>
+          <span class="tag">C#</span>
+        </div>
+        <span class="badge-soon">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="blog-post">
+      <div class="post-top">
+        <h2>Building Modern Web Applications: Banking App Architecture</h2>
+        <span class="post-date">February 1, 2024</span>
+      </div>
+      <p class="post-excerpt">
+        An in-depth look at the architecture and implementation of a banking application using ASP.NET Core MVC —
+        covering secure transaction handling, database design, and user authentication patterns.
+      </p>
+      <div class="post-footer">
+        <div class="tags">
+          <span class="tag">ASP.NET Core</span>
+          <span class="tag">MVC</span>
+          <span class="tag">SQL Server</span>
+        </div>
+        <span class="badge-soon">Coming Soon</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Kaan Güler &nbsp;·&nbsp;
+      <a href="https://github.com/kaanguler14" target="_blank">GitHub</a> &nbsp;·&nbsp;
+      <a href="http://www.linkedin.com/in/kaan-güler-234098243" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+      <a href="mailto:kaangulergs@gmail.com">kaangulergs@gmail.com</a>
+    </p>
+  </footer>
+
+  <script src="chatbot.js"></script>
+</body>
+
+</html>
