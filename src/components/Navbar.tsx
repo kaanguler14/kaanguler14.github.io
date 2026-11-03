@@ -61,7 +61,7 @@ export default function Navbar() {
         <div className="flex gap-2">
           {/* Download CV Button */}
           <a
-            href="/Kaan_Guler_CV.pdf"
+            href="/Kaan_Guler_CV_KIRA.pdf"
             download
             className="group relative text-xs sm:text-sm rounded-full px-4 py-1.5 sm:py-2 transition-colors inline-block"
           >

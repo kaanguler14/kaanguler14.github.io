@@ -126,7 +126,7 @@ export default function Resume() {
           </div>
           
           <a
-            href="/Kaan_Guler_CV.pdf"
+            href="/Kaan_Guler_CV_KIRA.pdf"
             download
             className="flex items-center gap-4 px-8 py-4 rounded-full border border-stroke hover:bg-surface transition-colors"
           >
