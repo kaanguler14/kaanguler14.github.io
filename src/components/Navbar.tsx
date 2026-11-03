@@ -40,7 +40,7 @@ export default function Navbar() {
 
         {/* Links */}
         <div className="flex gap-1">
-          {["Work", "Resume", "CV", "Journal", "Contact"].map((item) => (
+          {["Work", "Resume", "Journal", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -54,6 +54,14 @@ export default function Navbar() {
               {item}
             </a>
           ))}
+          <a
+            href="/cv.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50"
+          >
+            CV ↗
+          </a>
         </div>
 
         <div className="w-px h-5 bg-stroke mx-2" />

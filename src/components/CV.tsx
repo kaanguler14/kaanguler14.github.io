@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 
+const CV_PDF_URL = "/Kaan_Guler_CV_KIRA.pdf";
+const CV_PAGE_URL = "/cv.html";
+// Google Docs viewer — renders in every browser without plugin
+const GDOCS_URL = `https://docs.google.com/viewer?url=https://kaanguler14.github.io/Kaan_Guler_CV_KIRA.pdf&embedded=true`;
+
 export default function CV() {
   return (
     <section id="cv" className="bg-bg py-24 px-6">
@@ -26,58 +31,88 @@ export default function CV() {
             </p>
           </div>
 
-          <a
-            href="/Kaan_Guler_CV_KIRA.pdf"
-            download="Kaan_Guler_CV.pdf"
-            className="flex items-center gap-4 px-8 py-4 rounded-full border border-stroke hover:bg-surface transition-colors shrink-0"
-          >
-            <span className="text-sm font-medium tracking-widest uppercase">Download PDF</span>
-            <div className="w-8 h-8 rounded-full bg-text-primary flex items-center justify-center">
-              <span className="text-bg text-xs">↓</span>
-            </div>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            {/* Full page link */}
+            <a
+              href={CV_PAGE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-6 py-3.5 rounded-full border border-stroke hover:bg-surface transition-colors text-sm font-medium tracking-wide"
+            >
+              <span>Open full page</span>
+              <span className="text-xs opacity-60">↗</span>
+            </a>
+            {/* Download */}
+            <a
+              href={CV_PDF_URL}
+              download="Kaan_Guler_CV.pdf"
+              className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-text-primary text-bg hover:opacity-90 transition-opacity text-sm font-medium tracking-wide"
+            >
+              <span>Download PDF</span>
+              <span className="text-xs">↓</span>
+            </a>
+          </div>
         </motion.div>
 
-        {/* PDF Viewer */}
+        {/* PDF Viewer Frame */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-          className="relative rounded-2xl overflow-hidden border border-stroke bg-surface"
+          className="relative rounded-2xl overflow-hidden border border-stroke"
         >
           {/* Toolbar */}
-          <div className="flex items-center justify-between px-6 py-3 border-b border-stroke bg-surface/80 backdrop-blur-md">
+          <div className="flex items-center justify-between px-5 py-3 border-b border-stroke bg-surface">
             <div className="flex items-center gap-3">
-              {/* Traffic-light dots */}
-              <span className="w-3 h-3 rounded-full bg-white/10 block" />
-              <span className="w-3 h-3 rounded-full bg-white/10 block" />
-              <span className="w-3 h-3 rounded-full bg-white/10 block" />
-              <div className="w-px h-4 bg-stroke mx-2" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/10 block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/10 block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/10 block" />
+              <div className="w-px h-4 bg-stroke mx-1" />
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse block" />
                 <span className="text-xs text-muted tracking-widest">Kaan_Guler_CV.pdf</span>
               </div>
             </div>
             <a
-              href="/Kaan_Guler_CV_KIRA.pdf"
+              href={CV_PAGE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[10px] uppercase tracking-[0.2em] text-muted hover:text-text-primary transition-colors"
             >
-              Open in new tab ↗
+              Full page ↗
             </a>
           </div>
 
-          {/* iframe */}
+          {/* Google Docs embedded viewer — works in all browsers */}
           <iframe
-            src="/Kaan_Guler_CV_KIRA.pdf"
+            src={GDOCS_URL}
             title="Kaan Güler — Curriculum Vitae"
-            className="w-full bg-white"
+            className="w-full bg-surface"
             style={{ height: "85vh", minHeight: "600px", border: "none", display: "block" }}
             loading="lazy"
+            allow="autoplay"
           />
         </motion.div>
+
+        {/* Direct link hint */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="mt-6 text-center text-xs text-muted tracking-widest"
+        >
+          Direct link:{" "}
+          <a
+            href={CV_PAGE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:underline underline-offset-4"
+          >
+            kaanguler14.github.io/cv.html
+          </a>
+        </motion.p>
 
       </div>
     </section>
