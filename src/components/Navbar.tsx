@@ -40,7 +40,7 @@ export default function Navbar() {
 
         {/* Links */}
         <div className="flex gap-1">
-          {["Work", "Resume", "Journal", "Contact"].map((item) => (
+          {["Work", "Resume", "CV", "Journal", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}

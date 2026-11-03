@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import SelectedWorks from './components/SelectedWorks'
 import Resume from './components/Resume'
+import CV from './components/CV'
 import Journal from './components/Journal'
 import Explorations from './components/Explorations'
 import Stats from './components/Stats'
@@ -23,6 +24,7 @@ function App() {
           <Hero />
           <SelectedWorks />
           <Resume />
+          <CV />
           <Journal />
           <Explorations />
           <Stats />
