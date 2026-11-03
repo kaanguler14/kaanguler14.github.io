@@ -80,7 +80,7 @@ export default function Hero() {
           </div>
           <div className="flex items-center gap-2 text-xs text-muted uppercase tracking-[0.25em]">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_6px_rgba(34,197,94,0.4)]" />
-            <span>Based in Ankara, Turkey</span>
+            <span>Based in Karlsruhe, Germany</span>
           </div>
         </div>
 

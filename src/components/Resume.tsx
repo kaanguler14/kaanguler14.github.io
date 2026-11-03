@@ -64,7 +64,7 @@ const EDUCATION = [
     date: "Sep 2020 – Jun 2025",
     gpa: "3.60 / 4.00",
     honors: "High Honors",
-    location: "Ankara, Turkey",
+    location: "Karlsruhe, Germany",
     details: "Relevant Coursework: Machine Learning, Artificial Intelligence, Data Structures & Algorithms, Database Systems, Software Engineering, Computer Networks, Operating Systems, Linear Algebra, Probability & Statistics."
   }
 ];
